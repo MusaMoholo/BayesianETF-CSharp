@@ -12,3 +12,4 @@
 /home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.pdb
 /home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.genruntimeconfig.cache
 /home/musamoholo98/BayesianETF/obj/Debug/net8.0/ref/BayesianETF.dll
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.sourcelink.json
