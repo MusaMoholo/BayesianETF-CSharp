@@ -1,0 +1,14 @@
+/home/musamoholo98/BayesianETF/bin/Debug/net8.0/BayesianETF
+/home/musamoholo98/BayesianETF/bin/Debug/net8.0/BayesianETF.deps.json
+/home/musamoholo98/BayesianETF/bin/Debug/net8.0/BayesianETF.runtimeconfig.json
+/home/musamoholo98/BayesianETF/bin/Debug/net8.0/BayesianETF.dll
+/home/musamoholo98/BayesianETF/bin/Debug/net8.0/BayesianETF.pdb
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.GeneratedMSBuildEditorConfig.editorconfig
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.AssemblyInfoInputs.cache
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.AssemblyInfo.cs
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.csproj.CoreCompileInputs.cache
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.dll
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/refint/BayesianETF.dll
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.pdb
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/BayesianETF.genruntimeconfig.cache
+/home/musamoholo98/BayesianETF/obj/Debug/net8.0/ref/BayesianETF.dll
