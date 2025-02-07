@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BayesianETF", "BayesianETF.csproj", "{D479EAC8-4F14-3514-318B-B5C83A5BBDD1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D479EAC8-4F14-3514-318B-B5C83A5BBDD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D479EAC8-4F14-3514-318B-B5C83A5BBDD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D479EAC8-4F14-3514-318B-B5C83A5BBDD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D479EAC8-4F14-3514-318B-B5C83A5BBDD1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {902DFB52-CDF6-4CAB-88EF-A96F42CB3CA3}
+	EndGlobalSection
+EndGlobal

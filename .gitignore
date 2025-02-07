@@ -1,0 +1,14 @@
+# Ignore compiled C# binaries
+bin/
+obj/
+Migrations/
+
+# Ignore SQLite temporary files
+*.db-journal
+
+# Ignore Python virtual environment & cache
+python/__pycache__/
+python/venv/
+
+# Ignore VS Code workspace files
+.vscode/
