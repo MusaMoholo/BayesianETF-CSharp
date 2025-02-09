@@ -8,12 +8,12 @@ namespace BayesianETF.Models
         [Key]
         public int Id { get; set; }
 
-        public string? Symbol { get; set; }  // Stock ticker
-        public string? Quarter { get; set; } // "YYYY-QX" (e.g., "2024-Q1")
-        public decimal Open { get; set; }   // First Open price of the quarter
-        public decimal High { get; set; }   // Max High in the quarter
-        public decimal Low { get; set; }    // Min Low in the quarter
-        public decimal Close { get; set; }  // Last Close price of the quarter
-        public long Volume { get; set; }    // Sum of trading volume in the quarter
+        public string? Symbol { get; set; }
+        public string? Quarter { get; set; }
+        public decimal Open { get; set; }
+        public decimal High { get; set; }
+        public decimal Low { get; set; }
+        public decimal Close { get; set; }
+        public long Volume { get; set; }
     }
 }

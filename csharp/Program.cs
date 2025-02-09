@@ -9,7 +9,6 @@ class Program
         var csvService = new CsvService();
         var stockData = csvService.ReadStockData(filePath);
 
-        // Insert data into the database if it's not empty
         if (stockData.Count > 0)
         {
             csvService.SaveToDatabase(stockData);
@@ -22,11 +21,9 @@ class Program
 
         var queryService = new QueryService();
 
-        // Fetch and display all stock prices
         Console.WriteLine("\nFetching all stock prices:");
         queryService.FetchAllStocks();
 
-        // Fetch and display top 5 stocks by return
         Console.WriteLine("\nFetching top 5 stocks by return:");
         queryService.GetTop5StocksByReturn();
     }

@@ -20,22 +20,22 @@ namespace BayesianETF.Services
 
             using (var reader = new StreamReader(filePath))
             {
-                string? headerLine = reader.ReadLine(); // Read and ignore header
-                if (headerLine == null) return stockPrices; // Check if file is empty
+                string? headerLine = reader.ReadLine();
+                if (headerLine == null) return stockPrices;
 
                 while (!reader.EndOfStream)
                 {
-                    string? line = reader.ReadLine(); // Read a line from the CSV
-                    if (string.IsNullOrWhiteSpace(line)) continue; // Skip empty lines
+                    string? line = reader.ReadLine();
+                    if (string.IsNullOrWhiteSpace(line)) continue;
 
-                    string[] values = line.Split(','); // Split the CSV line into an array
-                    if (values.Length < 7) continue; // Ensure correct number of columns
+                    string[] values = line.Split(',');
+                    if (values.Length < 7) continue;
 
                     try
                     {
                         var stockPrice = new StockPrice
                         {
-                            Symbol = values[0] ?? "UNKNOWN", // Default if null
+                            Symbol = values[0] ?? "UNKNOWN",
                             Date = DateTime.TryParseExact(values[1], "yyyy-MM-dd", 
                                 CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate) ? parsedDate : DateTime.MinValue,
                             Open = decimal.TryParse(values[2], NumberStyles.Any, CultureInfo.InvariantCulture, out decimal open) ? open : 0,

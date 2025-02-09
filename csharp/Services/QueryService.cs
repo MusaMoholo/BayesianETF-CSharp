@@ -24,7 +24,7 @@ namespace BayesianETF.Services
             using (var context = new DatabaseContext())
             {
                 var topStocks = context.StockPrices
-                    .AsEnumerable() // Needed to avoid SQLite decimal ordering issues
+                    .AsEnumerable()
                     .OrderByDescending(stock => (double)((stock.Close - stock.Open) / stock.Open))
                     .Take(5)
                     .ToList();
