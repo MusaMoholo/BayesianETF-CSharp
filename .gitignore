@@ -1,14 +1,21 @@
-# Ignore compiled C# binaries
+# Python-specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.python_history
+python/bayesianvenv/
+
+# C#-specific
 bin/
 obj/
-Migrations/
+*.user
+*.suo
 
-# Ignore SQLite temporary files
-*.db-journal
-
-# Ignore Python virtual environment & cache
-python/__pycache__/
-python/venv/
-
-# Ignore VS Code workspace files
+# General IDE/OS-specific
 .vscode/
+.DS_Store
+Thumbs.db
+
+# Database
+*.db
