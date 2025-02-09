@@ -1,30 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using BayesianETF.Models;
 using BayesianETF.Services;
 
 class Program
 {
     static void Main(string[] args)
     {
-        string filePath = "Data/stock_prices.csv";
-        var csvService = new CsvService();
-        var stockData = csvService.ReadStockData(filePath);
+        string databasePath = "/home/musamoholo98/BayesianETF/data/stockdata.db"; // Ensure this path is correct.
+        var queryService = new QueryService(databasePath);
 
-        if (stockData.Count > 0)
+        try
         {
-            csvService.SaveToDatabase(stockData);
-            Console.WriteLine($"Inserted {stockData.Count} records into the database.");
+            List<ModelPrediction> predictions = queryService.FetchModelPredictions();
+
+            Console.WriteLine("Fetched model predictions:");
+            foreach (var prediction in predictions)
+            {
+                Console.WriteLine($"{prediction.Symbol}, {prediction.Quarter}: Predicted Return = {prediction.PredictedReturn}, Predicted Variance = {prediction.PredictedVariance}");
+            }
+
+            Console.WriteLine("ETF construction not implemented yet. Placeholder for future extension.");
         }
-        else
+        catch (Exception ex)
         {
-            Console.WriteLine("No stock data found in CSV.");
+            Console.WriteLine($"An error occurred: {ex.Message}");
         }
-
-        var queryService = new QueryService();
-
-        Console.WriteLine("\nFetching all stock prices:");
-        queryService.FetchAllStocks();
-
-        Console.WriteLine("\nFetching top 5 stocks by return:");
-        queryService.GetTop5StocksByReturn();
     }
 }

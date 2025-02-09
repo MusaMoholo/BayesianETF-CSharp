@@ -1,42 +1,37 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.EntityFrameworkCore;
 using BayesianETF.Models;
 
 namespace BayesianETF.Services
 {
     public class QueryService
     {
-        public void FetchAllStocks()
+        private readonly DbContextOptions<DatabaseContext> _options;
+
+        public QueryService(string databasePath)
         {
-            using (var context = new DatabaseContext())
-            {
-                var stocks = context.StockPrices.ToList();
-                foreach (var stock in stocks)
-                {
-                    Console.WriteLine($"{stock.Date.ToShortDateString()} {stock.Symbol}: Open {stock.Open}, Close {stock.Close}");
-                }
-            }
+            Console.WriteLine($"Database path: {databasePath}");
+
+            _options = new DbContextOptionsBuilder<DatabaseContext>()
+                .UseSqlite($"Data Source={databasePath}")
+                .Options;
         }
 
-        public void GetTop5QuarterlyStocksByReturn()
+        public List<ModelPrediction> FetchModelPredictions()
         {
-            using (var context = new DatabaseContext())
+            using var context = new DatabaseContext(_options);
+
+            Console.WriteLine("Fetching model predictions from the database...");
+            List<ModelPrediction> predictions = context.ModelPredictions.ToList();
+
+            foreach (var prediction in predictions)
             {
-                var topStocks = context.StockPrices
-                    .AsEnumerable()
-                    .OrderByDescending(stock => (double)((stock.Close - stock.Open) / stock.Open))
-                    .Take(5)
-                    .ToList();
-
-                Console.WriteLine("\nTop 5 Stocks by Quarterly Return:");
-                foreach (var stock in topStocks)
-                {
-                    double quarterlyReturn = (double)((stock.Close - stock.Open) / stock.Open) * 100;
-                    Console.WriteLine($"{stock.Symbol} ({stock.Quarter}): {quarterlyReturn:F2}% return (Open: {stock.Open}, Close: {stock.Close})");
-                }
+                Console.WriteLine($"{prediction.Symbol}, {prediction.Quarter}: Predicted Return = {prediction.PredictedReturn}, Variance = {prediction.PredictedVariance}");
             }
-        }
 
+            return predictions;
+        }
     }
 }
